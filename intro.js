@@ -49,3 +49,34 @@ $(document).ready(function () {
         $('form input, form textarea').val('');
     });
 });
+
+
+$(document).ready(function () {
+    let quantidadeTotal = 0;
+    let valorTotal = 0;
+
+    // Evento para o botão "Comprar"
+    $('.btn-comprar').on('click', function () {
+        // Incrementa a quantidade total
+        quantidadeTotal++;
+
+        // Obtém o preço do produto
+        const precoTexto = $(this).siblings('.preco').text(); // Exemplo: "R$ 10,00"
+        const precoNumerico = parseFloat(precoTexto.replace('R$', '').replace(',', '.'));
+
+        // Soma o preço ao valor total
+        valorTotal += precoNumerico;
+
+        // Atualiza os valores no menu flutuante
+        $('#quantidade-total').text(quantidadeTotal);
+        $('#valor-total').text(valorTotal.toFixed(2).replace('.', ','));
+
+        // Exibe o menu flutuante
+        $('#menu-flutuante').fadeIn();
+    });
+
+    // Evento para o botão "Fechar"
+    $('#fechar-menu').on('click', function () {
+        $('#menu-flutuante').fadeOut();
+    });
+});

@@ -146,6 +146,69 @@ h1, h2 {
     background-color: #2ecc71;
 }
 
+#menu-flutuante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    display: none; /* Ocultado por padrão */
+    z-index: 1000;
+}
+
+#menu-flutuante h3 {
+    margin: 0 0 10px;
+    color: #34C759;
+    text-align: center;
+}
+
+#menu-flutuante p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+#menu-flutuante button {
+    background-color: #34C759;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#menu-flutuante button:hover {
+    background-color: #2ecc71;
+}
+
+@media (max-width: 480px) {
+    #menu-flutuante {
+        width: 90%; /* Ocupa 90% da largura da tela */
+        right: 5%;  /* Centraliza horizontalmente */
+        bottom: 10px; /* Ajusta a margem inferior */
+        padding: 10px; /* Reduz o padding */
+    }
+
+    #menu-flutuante h3 {
+        font-size: 18px; /* Ajusta o tamanho da fonte */
+    }
+
+    #menu-flutuante p {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    #menu-flutuante button {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+        padding: 8px;    /* Ajusta o padding */
+    }
+}
+
+
 footer {
     background: rgb(58,180,58);
     background: linear-gradient(90deg, rgba(58,180,58,1) 15%, rgba(255,255,255,1) 50%, rgba(252,69,69,1) 85%);
